@@ -27,8 +27,8 @@
   ],
   "name":"Room2",
   "parent":{
-    "name":"E101 Proj",
-    "path":"E101 Proj.yyp",
+    "name":"Rooms",
+    "path":"folders/Rooms.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

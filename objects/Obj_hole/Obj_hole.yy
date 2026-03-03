@@ -8,8 +8,8 @@
   "name":"Obj_hole",
   "overriddenProperties":[],
   "parent":{
-    "name":"E101 Proj",
-    "path":"E101 Proj.yyp",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

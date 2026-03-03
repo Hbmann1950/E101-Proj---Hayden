@@ -1,0 +1,46 @@
+{
+  "$GMRoomUI":"",
+  "%Name":"RoomUI",
+  "children":[
+    {"$GMRUILayer":"v1","%Name":"UILayer_1","alignItems":2,"children":[
+        {"$GMRFlexPanel":"","%Name":"QuestionPanel","alignItems":2,"children":[
+            {"$GMRFlexPanel":"","%Name":"Question","alignItems":2,"children":[
+                {"$GMRTextItem":"v3","%Name":"text_1D906DC5","alignment":0,"charSpacing":0.0,"colour":4294967295,"flexProperties":{"$InstanceFlexProps":"v1","anchor":0,"resourceType":"InstanceFlexProps",},"fontId":{"name":"fnt_ui","path":"fonts/fnt_ui/fnt_ui.yy",},"frameH":0.0,"frameW":0.0,"frozen":false,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"lineSpacing":0.0,"name":"text_1D906DC5","paragraphSpacing":0.0,"resourceType":"GMRTextItem","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"text":"Q","wrap":false,"x":670.5,"y":170.0,},
+                {"$GMRSpriteGraphic":"v1","%Name":"graphic_18D072FD","animationSpeed":1.0,"colour":4294967295,"flexProperties":{"$InstanceFlexProps":"v1","anchor":0,"resourceType":"InstanceFlexProps","stretchHeight":true,"stretchWidth":true,},"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_18D072FD","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_ui_box","path":"sprites/spr_ui_box/spr_ui_box.yy",},"x":0.0,"y":0.0,},
+              ],"flexDirection":0,"height":{"unit":2,"value":100.0,},"justifyContent":1,"name":"Question","nodeColour":4294103112,"resourceType":"GMRFlexPanel","resourceVersion":"2.0","width":{"unit":2,"value":100.0,},},
+          ],"flexDirection":0,"height":{"unit":2,"value":50.0,},"justifyContent":1,"name":"QuestionPanel","nodeColour":4294088520,"resourceType":"GMRFlexPanel","resourceVersion":"2.0","width":{"unit":2,"value":100.0,},},
+        {"$GMRFlexPanel":"","%Name":"AnswerPanel","alignItems":2,"children":[
+            {"$GMRFlexPanel":"","%Name":"TopPanel","alignItems":2,"children":[
+                {"$GMRFlexPanel":"","%Name":"Answer_1","alignItems":2,"children":[
+                    {"$GMRTextItem":"v3","%Name":"text_75BF2A6B","alignment":0,"charSpacing":0.0,"colour":4294967295,"flexProperties":{"$InstanceFlexProps":"v1","anchor":0,"resourceType":"InstanceFlexProps",},"fontId":{"name":"fnt_ui","path":"fonts/fnt_ui/fnt_ui.yy",},"frameH":0.0,"frameW":0.0,"frozen":false,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"lineSpacing":0.0,"name":"text_75BF2A6B","paragraphSpacing":0.0,"resourceType":"GMRTextItem","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"text":"A1","wrap":false,"x":322.5,"y":74.0,},
+                    {"$GMRSpriteGraphic":"v1","%Name":"graphic_352ED7E4","animationSpeed":1.0,"colour":4294967295,"flexProperties":{"$InstanceFlexProps":"v1","anchor":0,"resourceType":"InstanceFlexProps","stretchHeight":true,"stretchWidth":true,},"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_352ED7E4","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_ui_button","path":"sprites/spr_ui_button/spr_ui_button.yy",},"x":0.0,"y":0.0,},
+                  ],"flexDirection":0,"height":{"unit":2,"value":100.0,},"justifyContent":1,"name":"Answer_1","nodeColour":4294068309,"resourceType":"GMRFlexPanel","resourceVersion":"2.0","width":{"unit":2,"value":50.0,},},
+                {"$GMRFlexPanel":"","%Name":"Answer_2","alignItems":2,"children":[
+                    {"$GMRTextItem":"v3","%Name":"text_177DBE64","alignment":0,"charSpacing":0.0,"colour":4294967295,"flexProperties":{"$InstanceFlexProps":"v1","anchor":0,"resourceType":"InstanceFlexProps",},"fontId":{"name":"fnt_ui","path":"fonts/fnt_ui/fnt_ui.yy",},"frameH":0.0,"frameW":0.0,"frozen":false,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"lineSpacing":0.0,"name":"text_177DBE64","paragraphSpacing":0.0,"resourceType":"GMRTextItem","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"text":"A2","wrap":false,"x":322.5,"y":74.0,},
+                    {"$GMRSpriteGraphic":"v1","%Name":"graphic_2BA427B8","animationSpeed":1.0,"colour":4294967295,"flexProperties":{"$InstanceFlexProps":"v1","anchor":0,"resourceType":"InstanceFlexProps","stretchHeight":true,"stretchWidth":true,},"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_2BA427B8","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_ui_button","path":"sprites/spr_ui_button/spr_ui_button.yy",},"x":0.0,"y":0.0,},
+                  ],"flexDirection":0,"height":{"unit":2,"value":100.0,},"justifyContent":1,"name":"Answer_2","nodeColour":4294068309,"resourceType":"GMRFlexPanel","resourceVersion":"2.0","width":{"unit":2,"value":50.0,},},
+              ],"flexDirection":2,"height":{"unit":2,"value":50.0,},"justifyContent":1,"name":"TopPanel","nodeColour":4290310728,"resourceType":"GMRFlexPanel","resourceVersion":"2.0","width":{"unit":2,"value":100.0,},},
+            {"$GMRFlexPanel":"","%Name":"BottomPanel","alignItems":2,"children":[
+                {"$GMRFlexPanel":"","%Name":"Answer_3","alignItems":2,"children":[
+                    {"$GMRTextItem":"v3","%Name":"text_25E02C13","alignment":0,"charSpacing":0.0,"colour":4294967295,"flexProperties":{"$InstanceFlexProps":"v1","anchor":0,"resourceType":"InstanceFlexProps",},"fontId":{"name":"fnt_ui","path":"fonts/fnt_ui/fnt_ui.yy",},"frameH":0.0,"frameW":0.0,"frozen":false,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"lineSpacing":0.0,"name":"text_25E02C13","paragraphSpacing":0.0,"resourceType":"GMRTextItem","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"text":"A3","wrap":false,"x":322.5,"y":74.0,},
+                    {"$GMRSpriteGraphic":"v1","%Name":"graphic_70A10DA6","animationSpeed":1.0,"colour":4294967295,"flexProperties":{"$InstanceFlexProps":"v1","anchor":0,"resourceType":"InstanceFlexProps","stretchHeight":true,"stretchWidth":true,},"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_70A10DA6","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_ui_button","path":"sprites/spr_ui_button/spr_ui_button.yy",},"x":0.0,"y":0.0,},
+                  ],"flexDirection":0,"height":{"unit":2,"value":100.0,},"justifyContent":1,"name":"Answer_3","nodeColour":4294068309,"resourceType":"GMRFlexPanel","resourceVersion":"2.0","width":{"unit":2,"value":50.0,},},
+                {"$GMRFlexPanel":"","%Name":"Answer_4","alignItems":2,"children":[
+                    {"$GMRTextItem":"v3","%Name":"text_3F900B7E","alignment":0,"charSpacing":0.0,"colour":4294967295,"flexProperties":{"$InstanceFlexProps":"v1","anchor":0,"resourceType":"InstanceFlexProps",},"fontId":{"name":"fnt_ui","path":"fonts/fnt_ui/fnt_ui.yy",},"frameH":0.0,"frameW":0.0,"frozen":false,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"lineSpacing":0.0,"name":"text_3F900B7E","paragraphSpacing":0.0,"resourceType":"GMRTextItem","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"text":"A4","wrap":false,"x":322.5,"y":74.0,},
+                    {"$GMRSpriteGraphic":"v1","%Name":"graphic_2991B663","animationSpeed":1.0,"colour":4294967295,"flexProperties":{"$InstanceFlexProps":"v1","anchor":0,"resourceType":"InstanceFlexProps","stretchHeight":true,"stretchWidth":true,},"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_2991B663","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_ui_button","path":"sprites/spr_ui_button/spr_ui_button.yy",},"x":0.0,"y":0.0,},
+                  ],"flexDirection":0,"height":{"unit":2,"value":100.0,},"justifyContent":1,"name":"Answer_4","nodeColour":4294068309,"resourceType":"GMRFlexPanel","resourceVersion":"2.0","width":{"unit":2,"value":50.0,},},
+              ],"flexDirection":2,"height":{"unit":2,"value":50.0,},"justifyContent":1,"name":"BottomPanel","nodeColour":4290310728,"resourceType":"GMRFlexPanel","resourceVersion":"2.0","width":{"unit":2,"value":100.0,},},
+          ],"flexDirection":0,"height":{"unit":2,"value":50.0,},"justifyContent":3,"name":"AnswerPanel","nodeColour":4282970825,"resourceType":"GMRFlexPanel","resourceVersion":"2.0","width":{"unit":2,"value":100.0,},},
+      ],"flexDirection":0,"gridX":32,"gridY":32,"justifyContent":3,"name":"UILayer_1","nodeColour":4284893426,"resourceType":"GMRUILayer","resourceVersion":"2.0",},
+  ],
+  "locked":false,
+  "name":"RoomUI",
+  "parent":{
+    "name":"E101 Proj",
+    "path":"E101 Proj.yyp",
+  },
+  "resourceType":"GMRoomUI",
+  "resourceVersion":"2.0",
+  "viewspaceChildren":[],
+  "visible":true,
+}
