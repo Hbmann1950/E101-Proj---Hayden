@@ -45,9 +45,29 @@ function generate_random_question() {
 
     correct_answer = _template.ans(_num1, _num2);
 
-    var _options = [correct_answer, correct_answer + 2, correct_answer - 2, correct_answer + 10];
-    array_shuffle(_options);
-    current_ui_answers = _options;
+	var _wrong1 = correct_answer + irandom_range(1, 5);
+	var _wrong2 = correct_answer - irandom_range(1, 5);
+	var _wrong3 = correct_answer + irandom_range(6, 12);
+	var _options = [correct_answer, _wrong1, _wrong2, _wrong3];
+
+	// Manual shuffle
+	var _len = array_length(_options);
+	for (var _i = _len - 1; _i > 0; _i--) {
+	    var _j = irandom(_i);
+	    var _tmp = _options[_i];
+	    _options[_i] = _options[_j];
+	    _options[_j] = _tmp;
+	}
+	
+	//Prints where the correct answer is
+	// May be able to be utilized for printing the answers onto the buttons?
+	for (var _i = 0; _i < 4; _i++) {
+    if (_options[_i] == correct_answer) {
+        show_debug_message("Correct answer is A" + string(_i + 1));
+    }
+}
+
+	current_ui_answers = _options;
 
     // --- Get root Flex Panel inside UI Layer ---
     var _root = layer_get_flexpanel_node("UILayer_1");
