@@ -35,6 +35,7 @@
     {"id":{"name":"obj_quiz_ui","path":"objects/obj_quiz_ui/obj_quiz_ui.yy",},},
     {"id":{"name":"obj_ui_text_element","path":"objects/obj_ui_text_element/obj_ui_text_element.yy",},},
     {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
+    {"id":{"name":"scr_math_utils","path":"scripts/scr_math_utils/scr_math_utils.yy",},},
     {"id":{"name":"Spr_Board","path":"sprites/Spr_Board/Spr_Board.yy",},},
     {"id":{"name":"Spr_ground","path":"sprites/Spr_ground/Spr_ground.yy",},},
     {"id":{"name":"spr_ui_back","path":"sprites/spr_ui_back/spr_ui_back.yy",},},
