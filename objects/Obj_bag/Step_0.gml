@@ -65,5 +65,13 @@ switch (state) {
     break;
 
     case "landed":
+	if global.twoplayermode {
+		if global.twoplayer {
+			global.twoplayer = false
+		}
+		else {
+			global.twoplayer = true
+		}
+	}
     break;
 }

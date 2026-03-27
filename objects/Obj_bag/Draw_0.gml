@@ -1,5 +1,11 @@
 // Bag
-draw_set_color(c_maroon);
+if !global.twoplayer {
+	draw_set_color(c_maroon);
+}
+else {
+	draw_set_color(c_navy);
+}
+
 draw_circle(x, y, 16, false);
 draw_set_color(c_black);
 draw_circle(x, y, 16, true);
