@@ -1,10 +1,8 @@
-switch (state) {
+switch(state) {
 
     case "idle":
-        if mouse_check_button_pressed(mb_left) {
-            if point_distance(mouse_x, mouse_y, x, y) < 30 {
-                state = "dragging";
-            }
+        if mouse_check_button_pressed(mb_left) && point_distance(mouse_x, mouse_y, x, y) < 30 {
+            state = "dragging";
         }
     break;
 
@@ -12,6 +10,7 @@ switch (state) {
         var pull_x = clamp(start_x - mouse_x, 0, max_drag_dist);
         var pull_y = clamp(mouse_y - start_y, 0, max_drag_dist);
         launch_power_actual = pull_x;
+
         x = start_x;
         y = start_y;
 
@@ -19,8 +18,7 @@ switch (state) {
             if pull_x < 5 {
                 state = "idle";
             } else {
-                var spd = pull_x * launch_power;
-                vx = spd;
+                vx = pull_x * launch_power;
                 vy = -pull_y * launch_power * 1.2;
                 state = "flying";
                 global.bag_active = true;
@@ -29,49 +27,58 @@ switch (state) {
     break;
 
     case "flying":
-        vy += gravity_val;
-        x += vx;
-        y += vy;
+	    vy += gravity_val;
+	    x += vx;
+	    y += vy;
+	    image_angle += abs(vy);
 
-        if instance_exists(Obj_board) {
-            if x > Obj_board.bbox_left and x < Obj_board.bbox_right {
-                if y >= Obj_board.bbox_top and vy > 0 {
-                    y = Obj_board.bbox_top;
-                    if !has_scored {
-                        if instance_exists(Obj_hole) {
-                            if point_distance(x, y, Obj_hole.x, Obj_hole.y) < 30 {
-                                scored_hole = true;
-                                has_scored = true;
-                            }
-                        }
-                        if !has_scored {
-                            scored_board = true;
-                            has_scored = true;
-                        }
-                    }
-                    state = "landed";
-                }
-            }
-        }
+	    // Hole detection
+	    if instance_exists(Obj_hole) && point_distance(x, y, Obj_hole.x, Obj_hole.y) < 30 {
+	        y = Obj_hole.y;
+	        state = "landed";
+	        if !has_scored {
+	            scored_hole = true;
+	            has_scored = true;
+	        }
+	    }
+	    // Board slanted line collision
+	    else if instance_exists(Obj_board) {
+	        var x1 = 1025;
+	        var y1 = 640;
+	        var x2 = 1228;
+	        var y2 = 580;
 
-        if state != "landed" and y >= ground_y {
-            y = ground_y;
-            state = "landed";
-        }
+	        if x >= x1 && x <= x2 {
+	            var m = (y2 - y1) / (x2 - x1);
+	            var b = y1 - m * x1;
+	            var y_on_line = m * x + b;
 
-        if state != "landed" and (x > room_width + 100 or x < -100) {
-            state = "landed";
-        }
-    break;
+	            if y >= y_on_line && vy > 0 {
+	                y = y_on_line;
+	                state = "landed";
+	                if !has_scored {
+	                    scored_board = true;
+	                    has_scored = true;
+	                }
+	            }
+	        }
+	    }
+
+	    // Ground check
+	    if state != "landed" && y >= ground_y {
+	        y = ground_y;
+	        state = "landed";
+	    }
+
+	    // Out of bounds
+	    if state != "landed" && (x < -100 || x > room_width + 100) {
+	        state = "landed";
+	    }
+	break;
 
     case "landed":
-	if global.twoplayermode {
-		if global.twoplayer {
-			global.twoplayer = false
-		}
-		else {
-			global.twoplayer = true
-		}
-	}
+        if global.twoplayermode {
+            global.twoplayer = !global.twoplayer;
+        }
     break;
 }

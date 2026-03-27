@@ -1,6 +1,4 @@
-state = "idle";
-
-vx = 0;
+state= "idle";
 vy = 0;
 gravity_val = 0.4;
 
@@ -15,3 +13,9 @@ scored_board = false;
 scored_hole = false;
 has_scored = false;
 launch_power_actual = 0;
+
+if global.twoplayer {
+    sprite_index = spr_bag_blue;
+} else {
+    sprite_index = spr_bag_red;
+}

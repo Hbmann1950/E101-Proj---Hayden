@@ -1,3 +1,3 @@
 hole_x = x;
 hole_y = y;
-hole_radius = 18;
+hole_radius = 20;
