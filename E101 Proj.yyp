@@ -24,6 +24,7 @@
   },
   "name":"E101 Proj",
   "resources":[
+    {"id":{"name":"fnt_title","path":"fonts/fnt_title/fnt_title.yy",},},
     {"id":{"name":"fnt_ui","path":"fonts/fnt_ui/fnt_ui.yy",},},
     {"id":{"name":"Obj_bag","path":"objects/Obj_bag/Obj_bag.yy",},},
     {"id":{"name":"Obj_board","path":"objects/Obj_board/Obj_board.yy",},},
@@ -31,10 +32,12 @@
     {"id":{"name":"Obj_game","path":"objects/Obj_game/Obj_game.yy",},},
     {"id":{"name":"Obj_Ground","path":"objects/Obj_Ground/Obj_Ground.yy",},},
     {"id":{"name":"Obj_hole","path":"objects/Obj_hole/Obj_hole.yy",},},
+    {"id":{"name":"obj_menu","path":"objects/obj_menu/obj_menu.yy",},},
     {"id":{"name":"obj_question","path":"objects/obj_question/obj_question.yy",},},
     {"id":{"name":"obj_quiz_ui","path":"objects/obj_quiz_ui/obj_quiz_ui.yy",},},
     {"id":{"name":"obj_ui_text_element","path":"objects/obj_ui_text_element/obj_ui_text_element.yy",},},
-    {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
+    {"id":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},},
+    {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"id":{"name":"scr_math_utils","path":"scripts/scr_math_utils/scr_math_utils.yy",},},
     {"id":{"name":"Spr_Board","path":"sprites/Spr_Board/Spr_Board.yy",},},
     {"id":{"name":"Spr_ground","path":"sprites/Spr_ground/Spr_ground.yy",},},
@@ -49,7 +52,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
+    {"roomId":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
+    {"roomId":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
