@@ -4,6 +4,7 @@ score_player = 0;
 correct_answer = 0;
 question_text = "";
 current_ui_answers = [0,0,0,0];
+randomise();
 
 // Questions Array
 questions = [

@@ -39,15 +39,6 @@ if instance_exists(_bag) and global.bag_active {
 			}
         }
 
-        // Spawn quiz UI only if it doesn't exist already
-        if not instance_exists(obj_quiz_ui) {
-            var quiz_ui = instance_create_layer(0, 0, "Controllers", obj_quiz_ui);
-			obj_quiz_ui.show_ui();
-        }
-		else{
-			obj_quiz_ui.show_ui();
-		}
-
         // Check game over
         if (score_player >= 21) || (score_player2 >= 21) {
             game_over = true;
