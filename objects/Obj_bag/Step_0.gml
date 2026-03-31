@@ -33,7 +33,7 @@ switch(state) {
 	    image_angle += abs(vy);
 
 	    // Hole detection
-	    if instance_exists(Obj_hole) && point_distance(x, y, Obj_hole.x, Obj_hole.y) < 30 {
+	    if instance_exists(Obj_hole) && point_distance(x, y, Obj_hole.x, Obj_hole.y) < 25 {
 	        y = Obj_hole.y;
 	        state = "landed";
 	        if !has_scored {
