@@ -4,64 +4,100 @@ if (!visible_ui) exit;
 draw_set_color(c_gray);
 draw_rectangle(0,0,display_get_gui_width(), display_get_gui_height(), false);
 
-// Split screen: top = question, bottom = answers
+// Layout
 var w = display_get_gui_width();
 var h = display_get_gui_height();
-var qh = h * 0.4;         // question container height
-var ah = h - qh;           // answer container height
-var aw = w / 2;            // answer left/right width
+var qh = h * 0.4;
+var ah = h - qh;
+var aw = w / 2;
 
 // Question container
 draw_set_color(c_gray);
 draw_rectangle(0,0,w,qh,false);
+
 draw_set_color(c_white);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_text(w/2, qh/2, question_text);
-// Draw border
+
+// Border
 draw_set_color(c_black);
 draw_rectangle(0,0,w,qh,true);
 
-// Answer container top
-draw_set_color(c_gray);
-draw_rectangle(0,qh,aw,qh+ah/2,false);
-draw_rectangle(aw,qh,w,qh+ah/2,false);
-// Draw border
-draw_set_color(c_black);
-draw_rectangle(0,qh,aw,qh+ah/2,true);
-draw_rectangle(aw,qh,w,qh+ah/2,true);
+// === ANSWER BOXES ===
+for (var i = 0; i < 4; i++)
+{
+    var x1, y1, x2, y2;
 
-// Answer container bottom
-draw_set_color(c_gray);
-draw_rectangle(0,qh+ah/2,aw,h,false);
-draw_rectangle(aw,qh+ah/2,w,h,false);
-// Draw border
-draw_set_color(c_black);
-draw_rectangle(0,qh+ah/2,aw,h,true);
-draw_rectangle(aw,qh+ah/2,w,h,true);
+    // Positioning
+    if (i == 0) { x1 = 0;   y1 = qh;         x2 = aw; y2 = qh + ah/2; }
+    if (i == 1) { x1 = aw;  y1 = qh;         x2 = w;  y2 = qh + ah/2; }
+    if (i == 2) { x1 = 0;   y1 = qh + ah/2;  x2 = aw; y2 = h; }
+    if (i == 3) { x1 = aw;  y1 = qh + ah/2;  x2 = w;  y2 = h; }
 
-// Answer text
+    // === COLOR LOGIC ===
+    var col = c_gray;
+
+    if (showing_feedback)
+    {
+        // Highlight correct answer
+        if (current_ui_answers[i] == correct_answer)
+        {
+            col = c_green;
+        }
+
+        // Highlight selected answer
+        if (i == selected_answer)
+        {
+            if (current_ui_answers[i] == correct_answer)
+            {
+                col = c_green;
+            }
+            else
+            {
+                col = c_red;
+            }
+        }
+    }
+
+    // Draw box
+    draw_set_color(col);
+    draw_rectangle(x1, y1, x2, y2, false);
+
+    // Border
+    draw_set_color(c_black);
+    draw_rectangle(x1, y1, x2, y2, true);
+}
+
+// === ANSWER TEXT ===
 draw_set_color(c_white);
-var answer_texts = current_ui_answers;
 
-for (var i=0; i<4; i++) {
+for (var i=0; i<4; i++)
+{
     var dx, dy;
-    if i==0 { dx=aw/2; dy=qh + ah/4; }
-    if i==1 { dx=aw + aw/2; dy=qh + ah/4; }
-    if i==2 { dx=aw/2; dy=qh + 3*ah/4; }
-    if i==3 { dx=aw + aw/2; dy=qh + 3*ah/4; }
 
-    var ans_val = answer_texts[i];
+    if (i==0) { dx=aw/2; dy=qh + ah/4; }
+    if (i==1) { dx=aw + aw/2; dy=qh + ah/4; }
+    if (i==2) { dx=aw/2; dy=qh + 3*ah/4; }
+    if (i==3) { dx=aw + aw/2; dy=qh + 3*ah/4; }
+
+    var ans_val = current_ui_answers[i];
 
     // Format arrays nicely
-    if is_array(ans_val) {
+    if is_array(ans_val)
+    {
         var s = "";
-        for (var j=0; j<array_length(ans_val); j++) {
-            if is_array(ans_val[j]) {
+        for (var j=0; j<array_length(ans_val); j++)
+        {
+            if is_array(ans_val[j])
+            {
                 s += "(" + string_join(ans_val[j], ",") + ")";
-            } else {
+            }
+            else
+            {
                 s += string(ans_val[j]);
             }
+
             if j < array_length(ans_val)-1 s += ", ";
         }
         ans_val = s;

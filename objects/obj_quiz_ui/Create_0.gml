@@ -4,7 +4,12 @@ score_player = 0;
 correct_answer = 0;
 question_text = "";
 current_ui_answers = [0,0,0,0];
+feedback_timer = 0;
+feedback_duration = 60; // half a second
+selected_answer = -1;
+showing_feedback = false;
 randomise();
+
 
 // Questions Array
 questions = [
@@ -356,15 +361,20 @@ function generate_random_question()
 
     current_ui_answers = options;
 }
+
 function process_answer(index) {
+    if (showing_feedback) return; // prevent spam clicks
+
+    selected_answer = index;
     var chosen = current_ui_answers[index];
 
-    if chosen == correct_answer {
+    showing_feedback = true;
+    feedback_timer = feedback_duration;
+
+    if (chosen == correct_answer) {
         score_player += 10;
         show_debug_message("Correct!");
-        visible_ui = false; // hide UI after correct answer
     } else {
         show_debug_message("Wrong!");
-        generate_random_question(); // new question for next try
     }
 }
