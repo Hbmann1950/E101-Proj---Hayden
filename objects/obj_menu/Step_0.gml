@@ -1,35 +1,31 @@
-// Get input (Returns 1 if pressed, 0 if not)
-var _up = keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"));
-var _down = keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S"));
-var _select = keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space);
+// Get Mouse Position relative to the GUI layer
+var _mx = device_mouse_x_to_gui(0);
+var _my = device_mouse_y_to_gui(0);
+var _w = display_get_gui_width();
+var _h = display_get_gui_height();
 
-// Move the index based on input
-// If down is pressed, this adds 1. If up is pressed, this subtracts 1.
-menu_index += _down - _up;
+// Define Sidebar start (right side)
+var _side_x = _w - sidebar_width;
+var _item_h = _h / menu_items;
 
-// Wrap the menu index so it loops around the top and bottom
-if (menu_index < 0) {
-    menu_index = menu_items - 1;
-}
-if (menu_index >= menu_items) {
-    menu_index = 0;
-}
+// Reset index each frame; it will be set if the mouse is hovering
+menu_index = -1;
 
-// Execute logic if an option is selected
-if (_select) {
-    switch(menu_index) {
-        case 0: // 1 Player
-            global.twoplayermode = false;
-            room_goto(rm_game);
-            break;
-			
-        case 1: // 2 Players
-            global.twoplayermode = true;
-            room_goto(rm_game);
-            break;
-			
-        case 2: // Quit
-            game_end();
-            break;
+for (var i = 0; i < menu_items; i++) {
+    var _y1 = i * _item_h;
+    var _y2 = _y1 + _item_h;
+    
+    // Check if mouse is within this button's box
+    if (_mx > _side_x && _mx < _w && _my > _y1 && _my < _y2) {
+        menu_index = i;
+        
+        // Check for Click
+        if (mouse_check_button_pressed(mb_left)) {
+            switch(i) {
+                case 0: global.twoplayermode = false; room_goto(rm_game); break;
+                case 1: global.twoplayermode = true;  room_goto(rm_game); break;
+                case 2: game_end(); break;
+            }
+        }
     }
 }

@@ -43,6 +43,7 @@
     {"id":{"name":"spr_bag_red","path":"sprites/spr_bag_red/spr_bag_red.yy",},},
     {"id":{"name":"spr_board","path":"sprites/spr_board/spr_board.yy",},},
     {"id":{"name":"Spr_ground","path":"sprites/Spr_ground/Spr_ground.yy",},},
+    {"id":{"name":"spr_logo","path":"sprites/spr_logo/spr_logo.yy",},},
     {"id":{"name":"spr_ui_back","path":"sprites/spr_ui_back/spr_ui_back.yy",},},
     {"id":{"name":"spr_ui_box","path":"sprites/spr_ui_box/spr_ui_box.yy",},},
     {"id":{"name":"spr_ui_button","path":"sprites/spr_ui_button/spr_ui_button.yy",},},

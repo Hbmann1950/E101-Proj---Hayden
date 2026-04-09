@@ -1,5 +1,10 @@
 // Step Event for bag controller
 
+if (keyboard_check_pressed(vk_escape)) // go to main manue if esc is pressed
+{
+    room_goto(rm_menu);
+}
+
 if game_over exit; // stop logic if game over
 
 var _bag = instance_find(Obj_bag, 0);

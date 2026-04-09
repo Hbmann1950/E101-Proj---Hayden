@@ -43,10 +43,10 @@ switch(state) {
 	    }
 	    // Board slanted line collision
 	    else if instance_exists(Obj_board) {
-	        var x1 = 1020;
-	        var y1 = 645;
-	        var x2 = 1228;
-	        var y2 = 580;
+	        var x1 = 1030;
+	        var y1 = 670;
+	        var x2 = 1245;
+	        var y2 = 605;
 
 	        if x >= x1 && x <= x2 {
 	            var m = (y2 - y1) / (x2 - x1);
