@@ -12,7 +12,7 @@ var ah = h - qh;
 var aw = w / 2;
 
 // Question container
-draw_set_color(c_gray);
+draw_set_color(c_black);
 draw_rectangle(0,0,w,qh,false);
 
 draw_set_color(c_white);
