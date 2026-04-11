@@ -1,5 +1,9 @@
 if (!visible_ui) exit;
 
+// Get mouse coordinates on the GUI layer
+var mx = device_mouse_x_to_gui(0);
+var my = device_mouse_y_to_gui(0);
+
 // Full background
 draw_set_color(c_gray);
 draw_rectangle(0,0,display_get_gui_width(), display_get_gui_height(), false);
@@ -12,7 +16,7 @@ var ah = h - qh;
 var aw = w / 2;
 
 // Question container
-draw_set_color(c_black);
+draw_set_color(#0F172A);
 draw_rectangle(0,0,w,qh,false);
 
 draw_set_color(c_white);
@@ -21,7 +25,7 @@ draw_set_valign(fa_middle);
 draw_text(w/2, qh/2, question_text);
 
 // Border
-draw_set_color(c_black);
+draw_set_color(#1E293B);
 draw_rectangle(0,0,w,qh,true);
 
 // === ANSWER BOXES ===
@@ -35,8 +39,11 @@ for (var i = 0; i < 4; i++)
     if (i == 2) { x1 = 0;   y1 = qh + ah/2;  x2 = aw; y2 = h; }
     if (i == 3) { x1 = aw;  y1 = qh + ah/2;  x2 = w;  y2 = h; }
 
+    // Check if mouse is currently hovering over this box
+    var is_hovering = point_in_rectangle(mx, my, x1, y1, x2, y2);
+
     // === COLOR LOGIC ===
-    var col = c_gray;
+    var col = #1E1E24; // Default base color
 
     if (showing_feedback)
     {
@@ -59,6 +66,11 @@ for (var i = 0; i < 4; i++)
             }
         }
     }
+    else if (is_hovering)
+    {
+        // Apply hover color if feedback is not active
+        col = #4A90E2;
+    }
 
     // Draw box
     draw_set_color(col);
@@ -70,7 +82,7 @@ for (var i = 0; i < 4; i++)
 }
 
 // === ANSWER TEXT ===
-draw_set_color(c_white);
+draw_set_color(#E0E0E0);
 
 for (var i=0; i<4; i++)
 {

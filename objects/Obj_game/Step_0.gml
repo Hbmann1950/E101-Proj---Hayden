@@ -41,7 +41,7 @@ if instance_exists(_bag) and global.bag_active {
 				}
 			}
 			else {
-				score_player += 21; // player scored board
+				score_player += 1; // player scored board
 			}
         }
 
