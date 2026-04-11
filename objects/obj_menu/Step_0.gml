@@ -21,6 +21,7 @@ for (var i = 0; i < menu_items; i++) {
         
         // Check for Click
         if (mouse_check_button_pressed(mb_left)) {
+			audio_play_sound(Sound_menuclick,5,false);
             switch(i) {
                 case 0: global.twoplayermode = false; room_goto(rm_game); break;
                 case 1: global.twoplayermode = true;  room_goto(rm_game); break;

@@ -2,6 +2,7 @@
 
 if (keyboard_check_pressed(vk_escape)) // go to main manue if esc is pressed
 {
+	audio_play_sound(Sound_switchmenu,5,false);
     room_goto(rm_menu);
 }
 
@@ -40,7 +41,7 @@ if instance_exists(_bag) and global.bag_active {
 				}
 			}
 			else {
-				score_player += 1; // player scored board
+				score_player += 21; // player scored board
 			}
         }
 
