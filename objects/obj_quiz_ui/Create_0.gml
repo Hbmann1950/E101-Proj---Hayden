@@ -373,8 +373,10 @@ function process_answer(index) {
 
     if (chosen == correct_answer) {
         score_player += 10;
+		audio_play_sound(Sound_correct,5,false);
         show_debug_message("Correct!");
     } else {
+		audio_play_sound(Sound_incorrect,5,false);
         show_debug_message("Wrong!");
     }
 }

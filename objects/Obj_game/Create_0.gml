@@ -1,5 +1,6 @@
 score_player = 0;
 score_player2 = 0;
+win_sound = true;
 game_over = false;
 global.bag_active = false;
 global.twoplayer = false // determines whos turn it is

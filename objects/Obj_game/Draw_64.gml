@@ -21,12 +21,21 @@ draw_text(20, 20, "Score: " + string(score_player));
 
 
 if (game_over && !global.twoplayermode) {
+	// used to make the win sound only play once
+	if win_sound {
+		audio_play_sound(Sound_win,8,false);
+		win_sound = false;
+	}
     draw_set_halign(fa_center);
     draw_set_color(c_yellow);
     draw_text(room_width / 2, room_height / 2 - 20, "YOU WIN!");
     draw_text(room_width / 2, room_height / 2 + 20, "Final Score: " + string(score_player));
 }
 else if (game_over && global.twoplayermode) {
+	if win_sound {
+		audio_play_sound(Sound_win,8,false);
+		win_sound = false;
+	}
 	draw_set_halign(fa_center); // used when two player mode is active, player with greater score wins when game ends
     draw_set_color(c_yellow);
     if (score_player >= score_player2) {

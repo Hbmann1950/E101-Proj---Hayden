@@ -21,6 +21,7 @@ switch(state) {
                 vx = pull_x * launch_power;
                 vy = -pull_y * launch_power * 1.2;
                 state = "flying";
+				audio_play_sound(Sound_bagthrow,6,false);
                 global.bag_active = true;
             }
         }
@@ -37,6 +38,7 @@ switch(state) {
 	        y = Obj_hole.y;
 	        state = "landed";
 	        if !has_scored {
+				audio_play_sound(Sound_bagland,5,false);
 	            scored_hole = true;
 	            has_scored = true;
 	        }
@@ -57,6 +59,7 @@ switch(state) {
 	                y = y_on_line;
 	                state = "landed";
 	                if !has_scored {
+						audio_play_sound(Sound_bagland,5,false);
 	                    scored_board = true;
 	                    has_scored = true;
 	                }
@@ -67,16 +70,19 @@ switch(state) {
 	    // Ground check
 	    if state != "landed" && y >= ground_y {
 	        y = ground_y;
+			audio_play_sound(Sound_bagland,5,false);
 	        state = "landed";
 	    }
 
 	    // Out of bounds
 	    if state != "landed" && (x < -100 || x > room_width + 100) {
+			audio_play_sound(Sound_bagland,5,false);
 	        state = "landed";
 	    }
 	break;
 
     case "landed":
+		
         if global.twoplayermode {
             global.twoplayer = !global.twoplayer;
         }

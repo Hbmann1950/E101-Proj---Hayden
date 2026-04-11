@@ -8,7 +8,7 @@ if (showing_feedback)
         showing_feedback = false;
 
         if (current_ui_answers[selected_answer] == correct_answer)
-        {
+        {	
             visible_ui = false;
         }
         else
