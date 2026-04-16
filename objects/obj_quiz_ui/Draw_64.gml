@@ -28,7 +28,7 @@ draw_text(w/2, qh/2, question_text);
 draw_set_color(#1E293B);
 draw_rectangle(0,0,w,qh,true);
 
-// === ANSWER BOXES ===
+// Answer boxes
 for (var i = 0; i < 4; i++)
 {
     var x1, y1, x2, y2;
@@ -42,7 +42,7 @@ for (var i = 0; i < 4; i++)
     // Check if mouse is currently hovering over this box
     var is_hovering = point_in_rectangle(mx, my, x1, y1, x2, y2);
 
-    // === COLOR LOGIC ===
+    // Color logic
     var col = #1E1E24; // Default base color
 
     if (showing_feedback)
@@ -81,7 +81,7 @@ for (var i = 0; i < 4; i++)
     draw_rectangle(x1, y1, x2, y2, true);
 }
 
-// === ANSWER TEXT ===
+// Answer text
 draw_set_color(#E0E0E0);
 
 for (var i=0; i<4; i++)

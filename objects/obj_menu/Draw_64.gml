@@ -2,16 +2,16 @@ var _w = display_get_gui_width();
 var _h = display_get_gui_height();
 var _side_x = _w - sidebar_width;
 
-// --- 1. Draw Sprite/Background Area (Left Side) ---
+// Draw sprite background on left
 draw_set_color(#121212);
 draw_rectangle(0, 0, _side_x, _h, false);
 
-// Draw your decorative sprite in the center of the left area
+// Draw decorative sprite in the center of the left area
 if (sprite_exists(sprite_to_draw)) {
     draw_sprite_ext(sprite_to_draw, 0, _side_x / 2, _h / 2, 1, 1, 0, c_white, 1);
 }
 
-// --- 2. Draw Sidebar Buttons (Right Side) ---
+// Draw right side buttons
 var _item_h = _h / menu_items;
 
 draw_set_halign(fa_center);

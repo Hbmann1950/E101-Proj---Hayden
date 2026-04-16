@@ -1,4 +1,4 @@
-// --- 1. FEEDBACK TIMER (always runs, no conditions) ---
+// Feedback timer, just correct/incorrect currently
 if (showing_feedback)
 {
     feedback_timer--;
@@ -19,11 +19,11 @@ if (showing_feedback)
         selected_answer = -1;
     }
 
-    return; // IMPORTANT: stop here, no input during feedback
+    return; 
 }
 
 
-// --- 2. INPUT (only when NOT showing feedback) ---
+// Input check
 if (visible_ui && mouse_check_button_pressed(mb_left))
 {
     var mx = device_mouse_x_to_gui(0);
